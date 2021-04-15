@@ -3,6 +3,7 @@ import fluoride from '../../../images/fluride.png';
 import cavity from '../../../images/cavity.png';
 import white from '../../../images/whitening.png';
 import ServiceDetails from '../ServiceDetails/ServiceDetails';
+import './Service.css';
 
 const serviceData = [
     {
@@ -18,6 +19,7 @@ const serviceData = [
         img: white
     }
 ]
+
 
 const Services = () => {
     return (
