@@ -1,27 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import seo from '../../../images/seo.jpg';
 import graphics from '../../../images/graphics.jpg';
 import web from '../../../images/web-design.jpg';
 import ServiceDetails from '../ServiceDetails/ServiceDetails';
 import './Service.css';
 
-const serviceData = [
-    {
-        name: 'Graphic Design',
-        img: graphics
-    },
-    {
-        name: 'Web Design',
-        img: web
-    },
-    {
-        name: 'SEO Marketing',
-        img: seo
-    }
-]
+// const serviceData = [
+//     {
+//         name: 'Graphic Design',
+//         img: graphics
+//     },
+//     {
+//         name: 'Web Design',
+//         img: web
+//     },
+//     {
+//         name: 'SEO Marketing',
+//         img: seo
+//     }
+// ]
+
 
 
 const Services = () => {
+
+    const [events, setEvents] = useState([]);
+
+    useEffect(() => {
+        fetch('https://glacial-anchorage-30312.herokuapp.com/events')
+            .then(res => res.json())
+            .then(data => setEvents(data))
+    }, [])
     return (
         <section className="services-container">
             <div className="text-center">
@@ -31,7 +40,7 @@ const Services = () => {
             <div className="d-flex justify-content-center">
             <div className="w-75 row mt-5 pt-5">
                 {
-                    serviceData.map(service => <ServiceDetails service={service}></ServiceDetails>)
+                    events.map(service => <ServiceDetails service={service}></ServiceDetails>)
                 }
             </div>
         </div>

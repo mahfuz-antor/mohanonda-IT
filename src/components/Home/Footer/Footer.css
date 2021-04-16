@@ -1,0 +1,7 @@
+.footer-bg{
+    background-image: url('../../../images/footer-bg.png');
+    height: 350px;
+    background-size: cover;
+    background-color: #171f44;
+    opacity: .9;
+}
