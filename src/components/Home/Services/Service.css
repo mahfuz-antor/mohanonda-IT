@@ -1,6 +1,6 @@
 .services-container{
     background-image: url('../../../images/service.png');
-    height: 500px;
+    height: 100%;
     background-size: cover;
     background-color: #171f44;
 }

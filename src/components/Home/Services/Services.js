@@ -1,32 +1,32 @@
 import React from 'react';
-import fluoride from '../../../images/fluride.png';
-import cavity from '../../../images/cavity.png';
-import white from '../../../images/whitening.png';
+import seo from '../../../images/seo.jpg';
+import graphics from '../../../images/graphics.jpg';
+import web from '../../../images/web-design.jpg';
 import ServiceDetails from '../ServiceDetails/ServiceDetails';
 import './Service.css';
 
 const serviceData = [
     {
-        name: 'Fluoride Treatment',
-        img: fluoride
+        name: 'Graphic Design',
+        img: graphics
     },
     {
-        name: 'Cavity Filling',
-        img: cavity
+        name: 'Web Design',
+        img: web
     },
     {
-        name: 'Teeth Whitening',
-        img: white
+        name: 'SEO Marketing',
+        img: seo
     }
 ]
 
 
 const Services = () => {
     return (
-        <section className="services-container mt-5">
+        <section className="services-container">
             <div className="text-center">
-            <h5 style={{color:'#1CC7C1'}}>OUR SERVICES</h5>
-            <h2>Services We Provide</h2>
+            <h3 className="pt-5" style={{color:'#1CC7C1'}}>OUR SERVICES</h3>
+            <h1 className="text-white mt-5">Services We Provide</h1>
             </div>
             <div className="d-flex justify-content-center">
             <div className="w-75 row mt-5 pt-5">

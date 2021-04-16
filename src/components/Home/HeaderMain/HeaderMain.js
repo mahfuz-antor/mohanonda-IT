@@ -1,17 +1,17 @@
 import React from 'react';
-import chair from '../../../images/chair.png';
+import header from '../../../images/header.jpg';
 
 const HeaderMain = () => {
     return (
         <main style={{height:'600px'}} className="row d-flex align-items-center">
-            <div className="col-md-4 offset-md-1">
-                <h2 style={{color: 'white'}}>Your New Smile <br/> Starts Here</h2>
-                <p className="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eos obcaecati incidunt! Labore, at ducimus?</p>
-                <button className="btn btn-primary">Get Appointment</button>
+            <div className="col-md-4 offset-md-1 p-5  me-4 bg-white">
+                <h2 className="text-info">Your New Smile <br/> Starts Here</h2>
+                <p className="text-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eos obcaecati incidunt! Labore, at ducimus?</p>
+                <button className="btn btn-info">Get Started</button>
 
             </div>
             <div className="col-md-6">
-                <img src={chair} alt=""  className="img-fluid"/>
+                <img src={header} alt=""  className="img-fluid"/>
             </div>
         </main>
     );

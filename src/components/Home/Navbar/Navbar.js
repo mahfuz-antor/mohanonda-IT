@@ -10,22 +10,22 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link me-5 text-white active" aria-current="page" href="#">Home</a>
+                            <a className="nav-link me-5 text-info active" aria-current="page" href="#">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link me-5 text-white" href="#">About</a>
+                            <a className="nav-link me-5 text-info" href="#">About</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link me-5 text-white" href="#">Dental Services</a>
+                            <a className="nav-link me-5 text-info" href="#">Dental Services</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link me-5 text-white" href="#" tabindex="-1" aria-disabled="true">Review</a>
+                            <a className="nav-link me-5 text-info" href="#" tabindex="-1" aria-disabled="true">Review</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link me-5 text-white" href="#" tabindex="-1" aria-disabled="true">Blogs</a>
+                            <a className="nav-link me-5 text-info" href="#" tabindex="-1" aria-disabled="true">Blogs</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link me-5 text-white" href="#" tabindex="-1" aria-disabled="true">Contact</a>
+                            <a className="nav-link me-5 text-info" href="#" tabindex="-1" aria-disabled="true">Contact</a>
                         </li>
                     </ul>
                 </div>
