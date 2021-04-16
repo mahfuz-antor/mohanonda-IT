@@ -3,12 +3,14 @@ import { useParams } from 'react-router';
 import { UserContext } from '../../App';
 // import Header from '../Header/Header';
 import { useForm } from 'react-hook-form';
+import Navbar from '../Home/Navbar/Navbar';
+import ProcessPayment from '../ProcessPayment/ProcessPayment';
 
 const ViewOrder = () => {
     const [detail, setDetail] = useState([]);
 
     useEffect(() => {
-        fetch('https://glacial-anchorage-30312.herokuapp.com/orderDetails')
+        fetch('http://localhost:5000/orderDetails')
             .then(res => res.json())
             .then(data => setDetail(data))
 
@@ -27,7 +29,7 @@ const ViewOrder = () => {
         const orderDetails = { ...loggedInUser, service: itService, shipment: data, orderTime: new Date() };
         console.log(setLoggedInUser);
 
-        fetch('https://glacial-anchorage-30312.herokuapp.com/addOrder', {
+        fetch('http://localhost:5000/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -45,8 +47,8 @@ const ViewOrder = () => {
     };
 
     return (
-        <div className="container">
-            {/* <Header></Header> */}
+        <div className="">
+            <Navbar></Navbar>
             {
                 detail.length === 0 &&
                 <div style={{margin:'0 auto'}} class="spinner-border text-primary d-flex justify-content-center" role="status">
@@ -54,7 +56,7 @@ const ViewOrder = () => {
                 </div>
             }
 
-            <form className="ship-form" onSubmit={handleSubmit(onSubmit)}>
+            <form className="ship-form m-5 p-2" onSubmit={handleSubmit(onSubmit)}>
                 <table className="table">
                     <thead>
                         <tr>
@@ -81,7 +83,9 @@ const ViewOrder = () => {
                         </tr>
                     </tbody>
                 </table>
-
+                <input type="text" defaultValue={itService?.name}/> <br/> <br/>
+                <input type="text" defaultValue={itService?.price}/> <br/> <br/>
+                    <ProcessPayment></ProcessPayment>
             </form>
 
         </div>

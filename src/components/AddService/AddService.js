@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Navbar from '../Home/Navbar/Navbar';
 
 const AddService = () => {
     const { register, handleSubmit } = useForm();
@@ -12,9 +13,9 @@ const AddService = () => {
         const eventData = {
             name: data.name,
             imageURL: imageURL,
-            price: data.price
+            price: data?.price
         };
-        const url = `https://glacial-anchorage-30312.herokuapp.com/addFruit`
+        const url = `http://localhost:5000/addService`
         console.log(eventData);
         fetch(url, {
             method: 'POST',
@@ -26,14 +27,14 @@ const AddService = () => {
             .then(res => console.log('server side res', res))
     };
     const handleImageUpload = event => {
-        console.log(event.target.files[0]);
+        console.log(event?.target?.files[0]);
         const imageData = new FormData();
         imageData.set('key', '47b2d957da970efd46650889d3040352');
-        imageData.append('image', event.target.files[0]);
+        imageData.append('image', event?.target.files[0]);
 
         axios.post('https://api.imgbb.com/1/upload', imageData)
             .then(function (response) {
-                setImageURL(response.data.data.display_url);
+                setImageURL(response?.data.data.display_url);
             })
             .catch(function (error) {
                 console.log(error);
@@ -41,19 +42,19 @@ const AddService = () => {
 
     }
     return (
-        <div className="container">
-            {/* <Header></Header> */}
+        <div className="">
+            <Navbar></Navbar>
 
 
-            <div className="row m-3">
+            <div className="row m-5">
                 <div className="col-sm-3">
                     <div className="card">
                         <div style={{height:'500px'}} className="card-body bg-info text-white">
                             <h2 className="card-title">Fruits Village</h2>
                             {/* <p className="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
-                            <Link className="text-white" to="/management">Manage Product</Link><br />
-                            <Link className="text-white" to="/addFruit">Add Product</Link><br />
-                            <Link className="text-white" to="/admin">Edit Product</Link><br />
+                            <Link className="text-white" to="/dashboard">Manage Product</Link><br />
+                            <Link className="text-white" to="/addService">Add Product</Link><br />
+                            <Link className="text-white" to="/dashboard">Edit Product</Link><br />
                         </div>
                     </div>
                 </div>
@@ -62,10 +63,10 @@ const AddService = () => {
                         <div className="card-body text-center bg-white  m-5 shadow">
 
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <h3>Add Your Fruit Details Here</h3>
-                                <input name="name" defaultValue="Fruit Name" ref={register} />
+                                <h3>Add Your Service Details Here</h3>
+                                <input name="name" defaultValue="Service Name" {...register("name")} />
                                 <br />
-                                <input name="price" defaultValue="Fruit Price" ref={register} />
+                                <input name="price" defaultValue="Service Price" {...register("price")} />
 
                                 <br />
                                 <input type="file" name="exampleRequired" onChange={handleImageUpload} />

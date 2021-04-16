@@ -4,7 +4,7 @@ const DeleteService = ({ event }) => {
     console.log(event);
 
     const handleDelete = (id) => {
-        fetch(`https://glacial-anchorage-30312.herokuapp.com/delete/${id}`, {
+        fetch(`http://localhost:5000/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

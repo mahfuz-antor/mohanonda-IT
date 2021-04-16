@@ -1,35 +1,26 @@
-import React from 'react';
-import philps from '../../../images/Ellipse 1.png';
-import angel from '../../../images/Ellipse 2.png';
+import React, { useEffect, useState } from 'react';
+import Navbar from '../Navbar/Navbar';
 import TestimonialDetails from '../TestimonialDetails/TestimonialDetails';
 
-const testimonials = [
-    {
-        name: 'Philps',
-        company: 'Monpal',
-        img: philps,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eos obcaecati incidunt! Labore, at ducimus?'
-    },
-    {
-        name: 'Angel',
-        company: 'Monpal',
-        img: angel,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eos obcaecati incidunt! Labore, at ducimus?'
-    },
-    {
-        name: 'Philps',
-        company: 'Monpal',
-        img: philps,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eos obcaecati incidunt! Labore, at ducimus?'
-    }
-]
+
+
 
 const Testimonials = () => {
+
+    const [events, setEvents] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/testimonial')
+            .then(res => res.json())
+            .then(data => setEvents(data))
+    }, [])
+
     return (
         <div className="row d-flex justify-content-center mt-5 mb-5">
+            {/* <Navbar></Navbar> */}
             <h2 className="text-center">This is Testimonials Field</h2>
                 {
-                    testimonials.map(testimonial => <TestimonialDetails testimonial={testimonial}></TestimonialDetails>)
+                    events.map(testimonial => <TestimonialDetails testimonial={testimonial}></TestimonialDetails>)
                 }
 
 

@@ -17,19 +17,19 @@ const Navbar = () => {
                             <Link className="nav-link active me-5 text-info" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link me-5 text-info" aria-current="page" to="/home">Services</Link>
+                            <Link className="nav-link me-5 text-info" aria-current="page" to="/addService">Services</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link me-5 text-info" aria-current="page" to="/home">Orders</Link>
+                            <Link className="nav-link me-5 text-info" aria-current="page" to="/viewOrder/:id">Orders</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link me-5 text-info" aria-current="page" to="/home">Admin</Link>
+                            <Link className="nav-link me-5 text-info" aria-current="page" to="/dashboard">Dashboard</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link me-5 text-info" aria-current="page" to="/home">Blogs</Link>
+                            <Link className="nav-link me-5 text-info" aria-current="page" to="/">Blogs</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link me-5 text-info" aria-current="page" to="/home">Contact</Link>
+                            <Link className="nav-link me-5 text-info" aria-current="page" to="/">Contact</Link>
                         </li>
                     </ul>
                 </div>

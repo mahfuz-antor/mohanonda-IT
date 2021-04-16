@@ -12,6 +12,8 @@ import ViewOrder from './components/ViewOrder/ViewOrder';
 import AddService from './components/AddService/AddService';
 import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AddReview from './components/AddReview/AddReview';
+import Testimonials from './components/Home/Testimonials/Testimonials';
 
 export const UserContext = createContext();
 
@@ -20,26 +22,35 @@ function App() {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <h5>Email: {loggedInUser.email}</h5>
-    <Router>
-    <Switch>
-      <Route exact path="/">
-        <Home></Home>
-      </Route>
-      <Route path="/login">
-        <Login></Login>
-      </Route>
-      <PrivateRoute path="/dashboard">
-        <Dashboard></Dashboard>
-      </PrivateRoute>
-      <PrivateRoute path="/viewOrder/:id">
-        <ViewOrder></ViewOrder>
-      </PrivateRoute>
-      <Route path="/addService">
-        <AddService></AddService>
-      </Route>
-    </Switch>
-  </Router>
-  </UserContext.Provider>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/viewOrder/:id">
+            <ViewOrder></ViewOrder>
+          </PrivateRoute>
+          <PrivateRoute path="/addService">
+            <AddService></AddService>
+          </PrivateRoute>
+          <PrivateRoute path="/addReview">
+            <AddReview></AddReview>
+          </PrivateRoute>
+          <PrivateRoute path="/testimonial">
+            <Testimonials></Testimonials>
+          </PrivateRoute>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 

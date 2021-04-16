@@ -4,6 +4,7 @@ import graphics from '../../../images/graphics.jpg';
 import web from '../../../images/web-design.jpg';
 import ServiceDetails from '../ServiceDetails/ServiceDetails';
 import './Service.css';
+import Navbar from '../Navbar/Navbar';
 
 // const serviceData = [
 //     {
@@ -27,12 +28,13 @@ const Services = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        fetch('https://glacial-anchorage-30312.herokuapp.com/events')
+        fetch('http://localhost:5000/events')
             .then(res => res.json())
             .then(data => setEvents(data))
     }, [])
     return (
         <section className="services-container">
+            {/* <Navbar></Navbar> */}
             <div className="text-center">
             <h3 className="pt-5" style={{color:'#1CC7C1'}}>OUR SERVICES</h3>
             <h1 className="text-white mt-5">Services We Provide</h1>
