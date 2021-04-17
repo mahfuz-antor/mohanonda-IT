@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
+import Navbar from '../Home/Navbar/Navbar';
 
 const OrderDetails = () => {
     
@@ -20,9 +21,10 @@ const OrderDetails = () => {
     console.log(setLoggedInUser);
 
     return (
-        <div className="container">
+        <div className="">
+            <Navbar></Navbar>
             {/* <Header></Header> */}
-            <div className="row">
+            <div className="row ms-5">
                 <h3>You have ordered: {detail.length} Services</h3>
             <div className="col-md-6 d-flex">
             {
