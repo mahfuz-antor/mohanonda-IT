@@ -14,6 +14,7 @@ import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddReview from './components/AddReview/AddReview';
 import Testimonials from './components/Home/Testimonials/Testimonials';
+import OrderDetails from './components/OrderDetails/OrderDetails';
 
 export const UserContext = createContext();
 
@@ -47,6 +48,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/testimonial">
             <Testimonials></Testimonials>
+          </PrivateRoute>
+          <PrivateRoute path="/orderDetails">
+            <OrderDetails></OrderDetails>
           </PrivateRoute>
         </Switch>
       </Router>
