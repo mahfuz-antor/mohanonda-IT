@@ -23,12 +23,14 @@ const Dashboard = () => {
                 <div className="col-sm-4">
                     <div style={{ marginLeft: '100px' }} className="card">
                         <div style={{height:'500px'}} className="card-body bg-info text-white">
-                            <h2 className="card-title">Fruits Village</h2>
+                            <h2 className="card-title">Mohanonda IT</h2>
                             {/* <p className="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
                             
                             <Link className="text-white" to="/addService">Add Product</Link><br />
                             <Link className="text-white" to="/addReview">Add Review</Link><br />
                             <Link className="text-white" to="/dashboard">Manage Product</Link><br />
+                            <Link className="text-white" to="/totalOrders">Total Orders</Link><br />
+                            <Link className="text-white" to="/orderDetails">Orders Details</Link><br />
                         </div>
                     </div>
                 </div>

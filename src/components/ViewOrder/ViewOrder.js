@@ -29,7 +29,6 @@ import ProcessPayment from '../ProcessPayment/ProcessPayment';
             // const savedCart = getDatabaseCart();
             const orderDetails = { ...loggedInUser, service: itService, shipment: data, orderTime: new Date() };
             console.log(setLoggedInUser);
-            console.log(...loggedInUser);
 
             fetch('http://localhost:5000/addOrder', {
                 method: 'POST',

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
 import Navbar from '../Home/Navbar/Navbar';
 
-const OrderDetails = () => {
+const OrderDetails = ({ORV}) => {
     
 
     const [detail, setDetail] = useState([]);
@@ -17,6 +17,7 @@ const OrderDetails = () => {
 
     }, [])
 
+    console.log(ORV);
     console.log(detail);
     console.log(setLoggedInUser);
 
