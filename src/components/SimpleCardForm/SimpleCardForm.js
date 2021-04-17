@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
+import { Link } from 'react-router-dom';
 
 const SimpleCardForm = () => {
   const stripe = useStripe();
   const elements = useElements();
 
   const [paymentError, setPaymentError] = useState(null);
-  const [paymentSuccess, setPaymentSuccess] = useState(null);
+  const [paymentSuccess, setPaymentSuccess] = useState();
 
   const handleSubmit = async (event) => {
     // Block native form submission.
@@ -40,12 +41,14 @@ const SimpleCardForm = () => {
     }
   };
 
+  console.log(paymentSuccess);
+
   return (
     <div>
         <form onSubmit={handleSubmit}>
-      <CardElement />
+      <CardElement /> <br/>
       <button type="submit" disabled={!stripe}>
-        Pay
+      Payment
       </button>
     </form>
     {
