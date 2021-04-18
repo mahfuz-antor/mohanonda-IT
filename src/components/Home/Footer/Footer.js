@@ -14,16 +14,16 @@ const Footer = () => {
             <div className="col-md-3 mt-3">
                 <h2>Company</h2>
                 <a className="text-white" href="#">About Us</a> <br/>
-                <a className="text-white" href="#">About Us</a> <br/>
-                <a className="text-white" href="#">About Us</a> <br/>
-                <a className="text-white" href="#">About Us</a> <br/>
+                <a className="text-white" href="#">Contact Us</a> <br/>
+                <a className="text-white" href="#">Our Services</a> <br/>
+                <a className="text-white" href="#">Our Blogs</a> <br/>
             </div>
             <div className="col-md-3 mt-3">
                 <h2>Quick Link</h2>
                 <a className="text-white" href="#">About Us</a> <br/>
-                <a className="text-white" href="#">About Us</a> <br/>
-                <a className="text-white" href="#">About Us</a> <br/>
-                <a className="text-white" href="#">About Us</a> <br/>
+                <a className="text-white" href="#">Contact Us</a> <br/>
+                <a className="text-white" href="#">Our Services</a> <br/>
+                <a className="text-white" href="#">Our Blogs</a> <br/>
             </div>
             <div className="col-md-3 mt-3 p-2">
                 <h2>About Us</h2>
