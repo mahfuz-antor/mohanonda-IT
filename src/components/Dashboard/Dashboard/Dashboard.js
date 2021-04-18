@@ -12,7 +12,7 @@ const Dashboard = () => {
     const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/isAdmin', {
+        fetch('https://protected-wildwood-79219.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -26,7 +26,7 @@ const Dashboard = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders?email=' + loggedInUser.email)
+        fetch('https://protected-wildwood-79219.herokuapp.com/orders?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setDetail(data))
 

@@ -11,7 +11,7 @@ import ProcessPayment from '../ProcessPayment/ProcessPayment';
         const [detail, setDetail] = useState([]);
 
         useEffect(() => {
-            fetch('http://localhost:5000/orderDetails')
+            fetch('https://protected-wildwood-79219.herokuapp.com/orderDetails')
                 .then(res => res.json())
                 .then(data => setDetail(data))
 
@@ -30,7 +30,7 @@ import ProcessPayment from '../ProcessPayment/ProcessPayment';
             const orderDetails = { ...loggedInUser, service: itService, shipment: data, orderTime: new Date() };
             console.log(setLoggedInUser);
 
-            fetch('http://localhost:5000/addOrder', {
+            fetch('https://protected-wildwood-79219.herokuapp.com/addOrder', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -14,7 +14,7 @@ const AddAdmin = () => {
             name: data.name,
             email: data?.email
         };
-        const url = `http://localhost:5000/addAdmin`
+        const url = `https://protected-wildwood-79219.herokuapp.com/addAdmin`
         console.log(eventData);
         fetch(url, {
             method: 'POST',

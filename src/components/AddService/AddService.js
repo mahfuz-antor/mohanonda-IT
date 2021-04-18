@@ -15,7 +15,7 @@ const AddService = () => {
             imageURL: imageURL,
             price: data?.price
         };
-        const url = `http://localhost:5000/addService`
+        const url = `https://protected-wildwood-79219.herokuapp.com/addService`
         console.log(eventData);
         fetch(url, {
             method: 'POST',

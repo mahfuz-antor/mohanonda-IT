@@ -15,13 +15,13 @@ const TotalOrders = () => {
     // }
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/totalOrders')
+    //     fetch('https://protected-wildwood-79219.herokuapp.com/totalOrders')
     //         .then(res => res.json())
     //         .then(data => setTotalOrders(data))
     // }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/totalOrders`, {
+        fetch(`https://protected-wildwood-79219.herokuapp.com/totalOrders`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({  email: loggedInUser.email })

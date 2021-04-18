@@ -10,7 +10,7 @@ const Testimonials = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/testimonial')
+        fetch('https://protected-wildwood-79219.herokuapp.com/testimonial')
             .then(res => res.json())
             .then(data => setEvents(data))
     }, [])

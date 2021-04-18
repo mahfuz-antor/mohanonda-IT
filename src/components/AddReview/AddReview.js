@@ -14,7 +14,7 @@ const AddReview = () => {
             imageURL: imageURL,
             price: data?.price
         };
-        const url = `http://localhost:5000/addReview`
+        const url = `https://protected-wildwood-79219.herokuapp.com/addReview`
         console.log(eventData);
         fetch(url, {
             method: 'POST',

@@ -4,7 +4,7 @@ const DeleteService = ({ event }) => {
     console.log(event);
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://protected-wildwood-79219.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
