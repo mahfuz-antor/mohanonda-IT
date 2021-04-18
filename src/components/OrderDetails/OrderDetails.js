@@ -26,9 +26,9 @@ const OrderDetails = () => {
                 <div className="col-md-4 bg-info">
                     <Link className="text-white" to="/addService">Add Product</Link><br />
                     <Link className="text-white" to="/addReview">Add Review</Link><br />
-                    <Link className="text-white" to="/dashboard">Manage Product</Link><br />
+                    <Link className="text-white" to="/dashboard">Your Orders</Link><br />
                     <Link className="text-white" to="/totalOrders">Total Orders</Link><br />
-                    <Link className="text-white" to="/orderDetails">Delete Service</Link><br />
+                    <Link className="text-white" to="/orderDetails">Management</Link><br />
                     <Link className="text-white" to="/addAdmin">Add Admin</Link><br />
                 </div>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 // import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Footer = () => {
@@ -28,9 +28,9 @@ const Footer = () => {
             <div className="col-md-3 mt-3 p-2">
                 <h2>About Us</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit quibusdam in ut ab facere exercitationem.</p>
-                <a className="text-white me-2" href="#"><img src="" alt=""/><FontAwesomeIcon icon={faFacebook} size="lg" /></a>
-                <a className="text-white me-2" href="#"><img src="" alt=""/><FontAwesomeIcon icon={faFacebook} size="lg"/></a>
-                <a className="text-white" href="#"><img src="" alt=""/><FontAwesomeIcon icon={faFacebook}  size="lg"/></a>
+                <a className="text-white me-2" href="#"><img src="" alt=""/><FontAwesomeIcon icon={faFacebook} size="3x" /></a>
+                <a className="text-white me-2" href="#"><img src="" alt=""/><FontAwesomeIcon icon={faGoogle} size="3x"/></a>
+                <a className="text-white" href="#"><img src="" alt=""/><FontAwesomeIcon icon={faLinkedin}  size="3x"/></a>
             </div>
 
         </div>

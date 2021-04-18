@@ -12,10 +12,10 @@ const TestimonialDetails = ({ testimonial }) => {
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus qui totam libero perferendis aut.</p>
                 </div>
                 <div className="card-footer d-flex  align-items-center">
-                    <img className="mx-3" src={testimonial.imageURL} alt="" width="60" />
+                    <img className="mx-3 rounded-circle" src={testimonial.imageURL} alt="" width="50" />
                     <div>
-                        <h3>{testimonial.name}</h3>
-                        <h5>CEO: {testimonial.company}</h5>
+                        <h5>{testimonial.name}</h5>
+                        <p>CEO: {testimonial.price}</p>
                     </div>
                 </div>
 

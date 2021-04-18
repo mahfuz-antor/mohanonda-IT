@@ -51,18 +51,17 @@ const AddReview = () => {
                         <div style={{height:'500px'}} className="card-body bg-info text-white">
                             <h2 className="card-title">Fruits Village</h2>
                             {/* <p className="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
-                            <Link className="text-white" to="/dashboard">Manage Product</Link><br />
-                            <Link className="text-white" to="/addService">Add Service</Link><br />
+                            <Link className="text-white" to="/dashboard">Your Orders</Link><br />
                             <Link className="text-white" to="/dashboard">Edit Product</Link><br />
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-9">
-                    <div className="card bg-info">
-                        <div className="card-body text-center bg-white  m-5 shadow">
+                <div className="col-md-9 ">
+                    <div className="card bg-info shadow">
+                        <div className="card-body text-center bg-secondary  m-5 shadow">
 
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <h3>Add Your Review Details Here</h3>
+                                <h3 className="text-info">Add Your Review Details Here</h3>
                                 <input name="name" defaultValue="Client Name" {...register("name")} />
                                 <br />
                                 <input name="company" defaultValue="Client Company" {...register("price")} />

@@ -18,7 +18,7 @@ const Testimonials = () => {
     return (
         <div className="row d-flex justify-content-center mt-5 mb-5">
             {/* <Navbar></Navbar> */}
-            <h2 className="text-center">This is Testimonials Field</h2>
+            <h2 className="text-center bg-info p-3 text-white"> Our Services Review Here </h2>
                 {
                     events.map(testimonial => <TestimonialDetails testimonial={testimonial}></TestimonialDetails>)
                 }
