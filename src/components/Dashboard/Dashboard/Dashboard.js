@@ -2,6 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../Home/Navbar/Navbar';
 import { UserContext } from '../../../App';
+import { faFacebook, faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import {  faBuilding, faFileAlt, faSortAlphaUpAlt, faPlusSquare, faArrowsAlt, faTasks  } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Dashboard = () => {
 
@@ -49,13 +52,13 @@ const Dashboard = () => {
                             {/* <p className="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
 
 
-                            <Link className="text-white" to="/addReview">Add Review</Link><br />
-                            <Link className="text-white" to="/dashboard">Your Orders</Link><br />
+                            <Link style={{textDecoration:'none'}} className="text-white" to="/addReview"> <FontAwesomeIcon icon={faFileAlt} /> Add Review</Link><br />
+                            <Link style={{textDecoration:'none'}} className="text-white" to="/dashboard"> <FontAwesomeIcon icon={faSortAlphaUpAlt} /> Your Orders</Link><br />
                             {isAdmin && <div>
-                                <Link className="text-white" to="/addService">Add Product</Link><br />
-                                <Link className="text-white" to="/totalOrders">Total Orders</Link><br />
-                                <Link className="text-white" to="/orderDetails">Management</Link><br />
-                                <Link className="text-white" to="/addAdmin">Add Admin</Link><br />
+                                <Link style={{textDecoration:'none'}} className="text-white" to="/addService"> <FontAwesomeIcon icon={faPlusSquare} /> Add Product</Link><br />
+                                <Link style={{textDecoration:'none'}} className="text-white" to="/totalOrders"> <FontAwesomeIcon icon={faArrowsAlt} /> Total Orders</Link><br />
+                                <Link style={{textDecoration:'none'}} className="text-white" to="/orderDetails"> <FontAwesomeIcon icon={faTasks} /> Management</Link><br />
+                                <Link style={{textDecoration:'none'}} className="text-white" to="/addAdmin"> <FontAwesomeIcon icon={faPlusSquare} /> Add Admin</Link><br />
                             </div>}
                         </div>
                     </div>

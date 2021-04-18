@@ -1,26 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import seo from '../../../images/seo.jpg';
-import graphics from '../../../images/graphics.jpg';
-import web from '../../../images/web-design.jpg';
 import ServiceDetails from '../ServiceDetails/ServiceDetails';
 import './Service.css';
-import Navbar from '../Navbar/Navbar';
-
-// const serviceData = [
-//     {
-//         name: 'Graphic Design',
-//         img: graphics
-//     },
-//     {
-//         name: 'Web Design',
-//         img: web
-//     },
-//     {
-//         name: 'SEO Marketing',
-//         img: seo
-//     }
-// ]
-
 
 
 const Services = () => {
@@ -36,11 +16,11 @@ const Services = () => {
         <section className="services-container">
             {/* <Navbar></Navbar> */}
             <div className="text-center">
-            <h3 className="pt-5" style={{color:'#1CC7C1'}}>OUR SERVICES</h3>
-            <h1 className="text-white mt-5">Services We Provide</h1>
+            <h1 className="p-5 m-2 text-info" style={{color:'#1CC7C1'}}>OUR SERVICES HERE</h1>
+            {/* <h1 className="text-white mt-3">Services We Provide</h1> */}
             </div>
             <div className="d-flex justify-content-center">
-            <div className="w-75 row mt-5 pt-5">
+            <div className="w-75 row mt-3 pt-3 pb-5">
                 {
                     events.map(service => <ServiceDetails service={service}></ServiceDetails>)
                 }

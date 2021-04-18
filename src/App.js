@@ -17,6 +17,8 @@ import Testimonials from './components/Home/Testimonials/Testimonials';
 import OrderDetails from './components/OrderDetails/OrderDetails';
 import TotalOrders from './components/Dashboard/TotalOrders/TotalOrders';
 import AddAdmin from './components/Dashboard/AddAdmin/AddAdmin';
+import NotFound from './components/NotFound/NotFound';
+import Blogs from './components/Home/Blogs/Blogs';
 
 export const UserContext = createContext();
 
@@ -32,6 +34,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home></Home>
+          </Route>
+          <Route path="/blogs">
+            <Blogs></Blogs>
           </Route>
           <Route path="/login">
             <Login></Login>
@@ -60,6 +65,9 @@ function App() {
           <PrivateRoute path="/addAdmin">
             <AddAdmin></AddAdmin>
           </PrivateRoute>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
         </Switch>
       </Router>
     </UserContext.Provider>

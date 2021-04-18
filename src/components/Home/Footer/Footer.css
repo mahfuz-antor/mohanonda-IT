@@ -1,6 +1,6 @@
 .footer-bg{
     background-image: url('../../../images/footer-bg.png');
-    height: 350px;
+    height: 100%;
     background-size: cover;
     background-color: #171f44;
     opacity: .9;

@@ -7,7 +7,7 @@ const Navbar = () => {
             <div className="container-fluid">
                 <a className="navbar-brand ms-5  text-info" href="/home"><h4>Mohanonda IT</h4></a>
 
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse flex-row-reverse" id="navbarNav">
