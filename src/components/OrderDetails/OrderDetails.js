@@ -1,45 +1,41 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
+import DeleteService from '../Dashboard/DeleteService/DeleteService';
 import Navbar from '../Home/Navbar/Navbar';
 
-const OrderDetails = ({ORV}) => {
-    
+const OrderDetails = () => {
 
-    const [detail, setDetail] = useState([]);
 
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
+    const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders?email=' + loggedInUser.email)
+        fetch('http://localhost:5000/events')
             .then(res => res.json())
-            .then(data => setDetail(data))
-
+            .then(data => setEvents(data))
     }, [])
-
-    console.log(ORV);
-    console.log(detail);
-    console.log(setLoggedInUser);
+    console.log(events);
 
     return (
         <div className="">
             <Navbar></Navbar>
             {/* <Header></Header> */}
             <div className="row ms-5">
-                <h3>You have ordered: {detail.length} Services</h3>
-            <div className="col-md-6 d-flex">
-            {
-                detail.length === 0 &&
-                <div style={{marginLeft:'50%'}} class="spinner-border text-primary justify-content-center" role="status">
-                    <span class="sr-only">Loading...</span>
+                
+                <div className="col-md-6 d-flex">
+                    {
+                        events.length === 0 &&
+                        <div style={{ marginLeft: '50%' }} class="spinner-border text-primary justify-content-center" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    }
+
+
+                    
+                    {
+                        events.map(event => <DeleteService event={event}></DeleteService>)
+                    }
                 </div>
-            }
-            
-            
-            {
-                detail.map(order => <div className="m-2 bg-info p-2" > <img style={{width:'50px', borderRadius:'50px'}} src={order?.service.imageURL} alt=""/> <h5> Service: {order?.service?.name} </h5>  <h6>  Email: {order.email} </h6> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum repellat dolorem temporibus. Alias, quas optio.</p>  </div> )
-            }
-            </div>
             </div>
         </div>
     );
