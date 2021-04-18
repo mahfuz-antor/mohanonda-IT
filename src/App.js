@@ -16,6 +16,7 @@ import AddReview from './components/AddReview/AddReview';
 import Testimonials from './components/Home/Testimonials/Testimonials';
 import OrderDetails from './components/OrderDetails/OrderDetails';
 import TotalOrders from './components/Dashboard/TotalOrders/TotalOrders';
+import AddAdmin from './components/Dashboard/AddAdmin/AddAdmin';
 
 export const UserContext = createContext();
 
@@ -55,6 +56,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/totalOrders">
             <TotalOrders></TotalOrders>
+          </PrivateRoute>
+          <PrivateRoute path="/addAdmin">
+            <AddAdmin></AddAdmin>
           </PrivateRoute>
         </Switch>
       </Router>
