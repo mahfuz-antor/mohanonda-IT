@@ -1,5 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../App';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { } from '../../App';
 import DeleteService from '../Dashboard/DeleteService/DeleteService';
 import Navbar from '../Home/Navbar/Navbar';
 
@@ -21,8 +22,17 @@ const OrderDetails = () => {
             <Navbar></Navbar>
             {/* <Header></Header> */}
             <div className="row ms-5">
-                
-                <div className="col-md-6 d-flex">
+
+                <div className="col-md-4 bg-info">
+                    <Link className="text-white" to="/addService">Add Product</Link><br />
+                    <Link className="text-white" to="/addReview">Add Review</Link><br />
+                    <Link className="text-white" to="/dashboard">Manage Product</Link><br />
+                    <Link className="text-white" to="/totalOrders">Total Orders</Link><br />
+                    <Link className="text-white" to="/orderDetails">Delete Service</Link><br />
+                    <Link className="text-white" to="/addAdmin">Add Admin</Link><br />
+                </div>
+
+                <div className="col-md-6">
                     {
                         events.length === 0 &&
                         <div style={{ marginLeft: '50%' }} class="spinner-border text-primary justify-content-center" role="status">
@@ -31,7 +41,6 @@ const OrderDetails = () => {
                     }
 
 
-                    
                     {
                         events.map(event => <DeleteService event={event}></DeleteService>)
                     }

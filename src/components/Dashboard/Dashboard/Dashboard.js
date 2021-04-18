@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
-import DeleteService from '../DeleteService/DeleteService';
 import Navbar from '../../Home/Navbar/Navbar';
 import { UserContext } from '../../../App';
 
@@ -10,6 +8,21 @@ const Dashboard = () => {
     const [detail, setDetail] = useState([]);
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+     const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/isAdmin', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({  email: loggedInUser.email })
+        })
+            .then(res=>res.json())
+            .then(data => setIsAdmin(data))
+    }, [])
+
+    // console.log(loggedInUser);
+    console.log(isAdmin);
 
 
     useEffect(() => {
@@ -31,16 +44,18 @@ const Dashboard = () => {
             <div className="row mt-4">
                 <div className="col-sm-4">
                     <div style={{ marginLeft: '100px' }} className="card">
-                        <div style={{ height: '500px' }} className="card-body bg-info text-white">
+                        <div style={{ height: '700px' }} className="card-body bg-info text-white">
                             <h2 className="card-title">Mohanonda IT</h2>
                             {/* <p className="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
 
                             <Link className="text-white" to="/addService">Add Product</Link><br />
                             <Link className="text-white" to="/addReview">Add Review</Link><br />
                             <Link className="text-white" to="/dashboard">Manage Product</Link><br />
+                            { isAdmin && <div>
                             <Link className="text-white" to="/totalOrders">Total Orders</Link><br />
-                            <Link className="text-white" to="/orderDetails">Orders Details</Link><br />
+                            <Link className="text-white" to="/orderDetails">Delete Service</Link><br />
                             <Link className="text-white" to="/addAdmin">Add Admin</Link><br />
+                            </div>}
                         </div>
                     </div>
                 </div>
